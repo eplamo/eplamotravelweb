@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eplamo — All-in-One Travel Planner & Kalkulator Budget</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. SPLASH SCREEN -->
+  <section id="splash-screen" class="screen active">
+    <div class="splash-bg-decor">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="splash-container">
+      <div class="brand-badge anim-up delay-1">
+        <span class="pulse-dot"></span> Eplamo
+      </div>
+      
+      <h1 class="anim-up delay-2">Rencanakan Transportasi, Hotel & Wisata Tanpa Overbudget</h1>
+      
+      <p class="splash-subtitle anim-up delay-3">
+        Platform all-in-one untuk memesan tiket pesawat/kereta, hotel keluarga, ribuan destinasi wisata, hingga kalkulator anti-boncos.
+      </p>
+
+      <div class="value-cards anim-up delay-4">
+        <div class="v-card">
+          <div class="v-icon">✈️</div>
+          <h3>Tiket & Hotel Lengkap</h3>
+          <p>Pilih moda transportasi dan akomodasi keluarga terbaik dalam satu tempat.</p>
+        </div>
+        <div class="v-card">
+          <div class="v-icon">💰</div>
+          <h3>Filter Sesuai Budget</h3>
+          <p>Tentukan batas anggaran di awal, sistem kami menyesuaikan paket untuk Anda.</p>
+        </div>
+        <div class="v-card">
+          <div class="v-icon">🍜</div>
+          <h3>Kontrol Kuliner & Oleh-oleh</h3>
+          <p>Cegah boncos dengan alokasi saku lapangan yang terstruktur transparan.</p>
+        </div>
+      </div>
+
+      <div class="splash-cta anim-up delay-5">
+        <button id="btn-start" class="btn-primary btn-large btn-glow">Mulai Rencanakan Liburan &rarr;</button>
+        <span class="splash-note">Gratis digunakan • Harga transparan tanpa biaya tersembunyi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. HALAMAN LOGIN & SIGN UP -->
+  <section id="auth-screen" class="screen">
+    <div class="auth-wrapper">
+      <div class="auth-side-banner">
+        <div class="auth-brand-top" id="back-to-splash">&larr; Eplamo</div>
+        <div class="auth-banner-content">
+          <span class="auth-pill">All-in-One Travel Planner</span>
+          <h2>Satu Akun untuk Seluruh Perjalanan Keluarga Anda</h2>
+          <p>Simpan riwayat pemesanan hotel, tiket pesawat/kereta, dan rute wisata favorit Anda dengan aman.</p>
+          <ul class="auth-checklist">
+            <li>✓ Pemesanan tiket pesawat, kereta & bus instan</li>
+            <li>✓ Pilihan hotel & villa ramah anak/lansia</li>
+            <li>✓ Kalkulator budget & E-Voucher terpadu</li>
+          </ul>
+        </div>
+        <div class="auth-banner-footer">
+          Eplamo Travel Planner • Edisi Indonesia
+        </div>
+      </div>
+
+      <div class="auth-form-panel">
+        <div class="auth-box">
+          <div class="auth-tabs">
+            <button type="button" class="auth-tab active" data-target="login-form">Masuk (Login)</button>
+            <button type="button" class="auth-tab" data-target="signup-form">Daftar Akun (Sign Up)</button>
+          </div>
+
+          <div id="auth-alert" class="auth-alert hidden"></div>
+
+          <!-- FORM LOGIN -->
+          <form id="login-form" class="auth-form active">
+            <div class="auth-heading">
+              <h3>Selamat Datang Kembali</h3>
+              <p>Masukkan email dan kata sandi akun Eplamo Anda</p>
+            </div>
+
+            <div class="form-group">
+              <label for="login-email">Alamat Email</label>
+              <input type="email" id="login-email" placeholder="nama@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="login-password">Kata Sandi</label>
+              <div class="password-wrap">
+                <input type="password" id="login-password" placeholder="Masukkan kata sandi" required>
+                <button type="button" class="toggle-pw" data-input="login-password">Lihat</button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary btn-block btn-large">Masuk ke Eplamo &rarr;</button>
+
+            <div class="demo-login-box">
+              <span>Ingin langsung mencoba tanpa daftar?</span>
+              <button type="button" id="btn-demo-login" class="btn-link">Masuk dengan Akun Demo</button>
+            </div>
+          </form>
+
+          <!-- FORM SIGN UP -->
+          <form id="signup-form" class="auth-form">
+            <div class="auth-heading">
+              <h3>Buat Akun Baru</h3>
+              <p>Daftar gratis dalam 30 detik untuk mulai merencanakan liburan</p>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-name">Nama Lengkap</label>
+              <input type="text" id="signup-name" placeholder="Contoh: Rina Wijaya" required>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="signup-email">Alamat Email</label>
+                <input type="email" id="signup-email" placeholder="rina@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="signup-phone">No. WhatsApp</label>
+                <input type="tel" id="signup-phone" placeholder="0812xxxxxxxx" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-password">Buat Kata Sandi (Min. 6 karakter)</label>
+              <div class="password-wrap">
+                <input type="password" id="signup-password" placeholder="Minimal 6 karakter" minlength="6" required>
+                <button type="button" class="toggle-pw" data-input="signup-password">Lihat</button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary btn-block btn-large">Daftar & Mulai Eksplorasi &rarr;</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEADER NAVIGASI UTAMA -->
+  <header id="main-header" class="hidden">
+    <div class="header-inner">
+      <!-- LOGO LIGHT & DARK MODE DENGAN UKURAN TERKUNCI DI CSS -->
+      <div class="logo-container" id="logo-home">
+        <img src="assets/image/logo-eplamo-lightmode.png" alt="Logo Eplamo Light" class="logolight">
+        <img src="assets/image/logo-eplamo-darkmode.png" alt="Logo Eplamo Dark" class="logodark">
+      </div>
+      
+      <div class="stepper">
+        <div class="step active" data-step="1">1. Transport & Hotel</div>
+        <div class="step-divider"></div>
+        <div class="step" data-step="2">2. Wisata & Budget</div>
+        <div class="step-divider"></div>
+        <div class="step" data-step="3">3. Pembayaran</div>
+        <div class="step-divider"></div>
+        <div class="step" data-step="4">4. E-Voucher</div>
+      </div>
+
+      <div class="user-nav">
+        <button type="button" id="btn-theme-toggle" class="btn-theme-toggle" title="Ganti Mode Terang/Gelap">🌙</button>
+        <span class="user-greeting">Halo, <strong id="header-user-name">Traveler</strong></span>
+        <button type="button" id="btn-logout" class="btn-logout">Keluar</button>
+      </div>
+    </div> <!-- PENUTUP .header-inner YANG SEBELUMNYA KURANG -->
+  </header>
+
+  <!-- 3. HALAMAN EKSPLORASI TRANSPORT & HOTEL -->
+  <section id="explore-screen" class="screen">
+    <div class="container">
+      <div class="filter-panel">
+        <div class="filter-header">
+          <h2>Pilih Transportasi, Hotel & Destinasi Utama</h2>
+          <p>Tentukan rute perjalanan dan akomodasi keluarga Anda</p>
+        </div>
+
+        <div class="filter-grid">
+          <div class="form-group">
+            <label for="filter-city">Kota Tujuan</label>
+            <select id="filter-city">
+              <option value="Yogyakarta">Yogyakarta</option>
+              <option value="Bandung">Bandung</option>
+              <option value="Malang">Malang & Batu</option>
+              <option value="Bali">Bali</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="filter-days">Durasi Liburan</label>
+            <select id="filter-days">
+              <option value="1">1 Hari (One Day Trip)</option>
+              <option value="2" selected>2 Hari 1 Malam</option>
+              <option value="3">3 Hari 2 Malam</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="filter-adults">Dewasa</label>
+            <input type="number" id="filter-adults" value="2" min="1" max="20">
+          </div>
+
+          <div class="form-group">
+            <label for="filter-kids">Anak-anak</label>
+            <input type="number" id="filter-kids" value="1" min="0" max="15">
+          </div>
+
+          <div class="form-group budget-input-group">
+            <label for="filter-budget">Batas Total Budget (Rp)</label>
+            <input type="number" id="filter-budget" value="3500000" step="100000" min="500000">
+          </div>
+        </div>
+
+        <!-- PILIHAN TRANSPORTASI & HOTEL -->
+        <div class="addon-selection-grid">
+          <div class="form-group">
+            <label for="select-transport">Moda Transportasi Utama (PP)</label>
+            <select id="select-transport">
+              <option value="pesawat">✈️ Pesawat (Estimasi Rp 900rb/org)</option>
+              <option value="kereta" selected>🚂 Kereta Api Eksekutif (Estimasi Rp 350rb/org)</option>
+              <option value="bus">🚌 Bus Pariwisata AC (Estimasi Rp 200rb/org)</option>
+              <option value="pribadi">🚗 Kendaraan Pribadi (BBM & Tol)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="select-hotel">Pilihan Akomodasi / Hotel</label>
+            <select id="select-hotel">
+              <option value="bintang4">⭐ Hotel Bintang 4 (Rp 750rb / malam)</option>
+              <option value="bintang3" selected>🏨 Hotel Bintang 3 (Rp 450rb / malam)</option>
+              <option value="homestay">🏡 Homestay / Villa Keluarga (Rp 300rb / malam)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-actions">
+          <button id="btn-auto-plan" class="btn-primary">✨ Susun Paket Otomatis Sesuai Budget</button>
+          <span class="budget-hint" id="budget-status-hint">Pilih tempat wisata di bawah untuk dimasukkan ke itinerary</span>
+        </div>
+      </div>
+
+      <!-- Katalog Destinasi Wisata -->
+      <div class="catalog-header">
+        <div>
+          <h3 id="catalog-title">Rekomendasi Wisata di Yogyakarta</h3>
+          <p class="subtitle">Pilih destinasi yang ingin Anda kunjungi</p>
+        </div>
+        <div class="selected-counter">
+          Terpilih: <strong id="selected-count">0</strong> Destinasi
+        </div>
+      </div>
+
+      <div id="destination-grid" class="destination-grid"></div>
+    </div>
+
+    <!-- Floating Bottom Bar -->
+    <div id="floating-summary" class="floating-bar">
+      <div class="floating-inner">
+        <div class="floating-info">
+          <span class="f-label">Estimasi Total (<span id="f-participants">3</span> Orang + Hotel + Transport)</span>
+          <div class="f-price-row">
+            <strong id="f-total-cost">Rp 0</strong>
+            <span id="f-budget-badge" class="badge-safe">Aman dalam budget</span>
+          </div>
+        </div>
+        <button id="btn-to-planner" class="btn-primary" disabled>Lanjut ke Kalkulator & Itinerary &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HALAMAN KALKULATOR BUDGET & ITINERARY -->
+  <section id="planner-screen" class="screen">
+    <div class="container">
+      <div class="page-top-nav">
+        <button id="btn-back-explore" class="btn-ghost">&larr; Ubah Pilihan Transport & Hotel</button>
+      </div>
+
+      <div class="planner-layout">
+        <div class="itinerary-column">
+          <div class="card">
+            <div class="card-header">
+              <h2>Susunan Rencana Perjalanan</h2>
+              <p>Otomatis dibagi per hari agar nyaman untuk keluarga</p>
+            </div>
+            <div id="itinerary-days-container"></div>
+          </div>
+        </div>
+
+        <div class="calculator-column">
+          <div class="card sticky-card">
+            <div class="card-header">
+              <h2>Kalkulator Budget Anti-Boncos</h2>
+              <p>Kontrol alokasi pengeluaran liburan Anda</p>
+            </div>
+
+            <div class="budget-meter">
+              <div class="meter-labels">
+                <span>Terpakai: <strong id="calc-used">Rp 0</strong></span>
+                <span>Target: <strong id="calc-target">Rp 3.500.000</strong></span>
+              </div>
+              <div class="progress-track">
+                <div id="budget-progress-bar" class="progress-fill" style="width: 50%;"></div>
+              </div>
+              <p id="budget-warning-text" class="meter-status">Sisa anggaran masih aman.</p>
+            </div>
+
+            <div class="cost-breakdown">
+              <div class="cost-item">
+                <div>
+                  <strong>Transportasi Utama (PP)</strong>
+                  <small id="detail-transport-main">Kereta Eksekutif (3 Orang)</small>
+                </div>
+                <span id="cost-main-transport">Rp 0</span>
+              </div>
+
+              <div class="cost-item">
+                <div>
+                  <strong>Akomodasi Hotel</strong>
+                  <small id="detail-hotel-cost">Hotel Bintang 3 (1 Malam)</small>
+                </div>
+                <span id="cost-hotel">Rp 0</span>
+              </div>
+
+              <div class="cost-item">
+                <div>
+                  <strong>Tiket Masuk Wisata & Parkir</strong>
+                  <small id="detail-ticket-desc">Destinasi terpilih</small>
+                </div>
+                <span id="cost-tickets">Rp 0</span>
+              </div>
+
+              <div class="cost-item slider-item">
+                <div class="slider-top">
+                  <div>
+                    <strong>Pos Kuliner & Jajan</strong>
+                    <small>Alokasi makan keluarga</small>
+                  </div>
+                  <span id="cost-food">Rp 400.000</span>
+                </div>
+                <input type="range" id="slider-food" min="150000" max="3000000" step="50000" value="400000">
+              </div>
+
+              <div class="cost-item slider-item">
+                <div class="slider-top">
+                  <div>
+                    <strong>Pos Belanja Oleh-oleh</strong>
+                    <small>Batas aman buah tangan</small>
+                  </div>
+                  <span id="cost-souvenir">Rp 300.000</span>
+                </div>
+                <input type="range" id="slider-souvenir" min="0" max="2000000" step="50000" value="300000">
+              </div>
+            </div>
+
+            <div class="total-summary-box">
+              <div class="summary-row">
+                <span>Total Estimasi Liburan</span>
+                <strong id="calc-grand-total" class="grand-total">Rp 0</strong>
+              </div>
+              <div class="summary-row split-bill">
+                <span>Biaya per Orang</span>
+                <strong id="calc-per-person">Rp 0</strong>
+              </div>
+              <div class="summary-row online-pay-note">
+                <span>Dibayar Online (Transport + Hotel + Tiket)</span>
+                <strong id="calc-pay-now">Rp 0</strong>
+              </div>
+            </div>
+
+            <button id="btn-to-checkout" class="btn-primary btn-block">Pesan Paket & Kunci Jadwal &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HALAMAN CHECKOUT -->
+  <section id="checkout-screen" class="screen">
+    <div class="container">
+      <div class="page-top-nav">
+        <button id="btn-back-planner" class="btn-ghost">&larr; Kembali ke Kalkulator</button>
+      </div>
+
+      <div class="checkout-layout">
+        <div class="card">
+          <div class="card-header">
+            <h2>Data Pemesan & Rombongan</h2>
+            <p>E-Voucher dan tiket resmi akan dikirimkan ke email Anda</p>
+          </div>
+
+          <form id="checkout-form">
+            <div class="form-group">
+              <label for="cust-name">Nama Lengkap Pemesan *</label>
+              <input type="text" id="cust-name" placeholder="Contoh: Budi Santoso" required>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="cust-phone">Nomor WhatsApp *</label>
+                <input type="tel" id="cust-phone" placeholder="0812xxxxxxxx" required>
+              </div>
+              <div class="form-group">
+                <label for="cust-email">Alamat Email *</label>
+                <input type="email" id="cust-email" placeholder="budi@email.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cust-date">Tanggal Keberangkatan *</label>
+              <input type="date" id="cust-date" required>
+            </div>
+
+            <div class="payment-methods">
+              <h3>Pilih Metode Pembayaran</h3>
+              <label class="payment-option selected">
+                <input type="radio" name="pay-method" value="BCA Virtual Account" checked>
+                <div class="pay-info">
+                  <strong>BCA Virtual Account</strong>
+                  <span>Verifikasi otomatis tanpa upload bukti</span>
+                </div>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="pay-method" value="Mandiri Virtual Account">
+                <div class="pay-info">
+                  <strong>Mandiri Virtual Account</strong>
+                  <span>Transfer via Livin' by Mandiri atau ATM</span>
+                </div>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="pay-method" value="QRIS">
+                <div class="pay-info">
+                  <strong>QRIS (GoPay, OVO, Dana, ShopeePay, M-Banking)</strong>
+                  <span>Scan kode QR instan</span>
+                </div>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-primary btn-block btn-large">Lanjut ke Pembayaran</button>
+          </form>
+        </div>
+
+        <div class="card sticky-card">
+          <div class="card-header">
+            <h3>Ringkasan Tagihan</h3>
+          </div>
+          <div id="checkout-items-list" class="checkout-list"></div>
+          <div class="checkout-total-box">
+            <div class="summary-row">
+              <span>Biaya Layanan</span>
+              <span>Gratis (Rp 0)</span>
+            </div>
+            <div class="summary-row main-pay">
+              <span>Total Tagihan Online</span>
+              <strong id="checkout-total-pay">Rp 0</strong>
+            </div>
+          </div>
+          <div class="info-callout">
+            <strong>Catatan Saku Lapangan:</strong><br>
+            Sisa alokasi kuliner & oleh-oleh sebesar <strong id="checkout-pocket-money">Rp 0</strong> disiapkan sebagai uang saku tunai/digital selama perjalanan.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PAYMENT GATEWAY -->
+  <section id="payment-gateway-screen" class="screen">
+    <div class="container narrow-container">
+      <div class="card payment-box">
+        <div class="timer-banner">
+          Selesaikan pembayaran dalam <strong id="payment-timer">14:59</strong>
+        </div>
+
+        <h2 id="pg-method-title">BCA Virtual Account</h2>
+        <p class="pg-subtitle">Order ID: <strong id="pg-order-id">LJ-882910</strong></p>
+
+        <div id="va-display-box" class="va-box">
+          <span>Nomor Virtual Account</span>
+          <div class="va-number-row">
+            <strong id="pg-va-number">88010 0812 3456 789</strong>
+            <button type="button" id="btn-copy-va" class="btn-outline-sm">Salin</button>
+          </div>
+        </div>
+
+        <div id="qris-display-box" class="qris-box hidden">
+          <div class="qr-placeholder">
+            <div class="qr-grid"></div>
+            <span>QRIS Eplamo</span>
+          </div>
+          <p>Scan kode QR di atas menggunakan aplikasi e-wallet atau mobile banking Anda</p>
+        </div>
+
+        <div class="pg-amount-box">
+          <span>Total Pembayaran</span>
+          <strong id="pg-amount">Rp 0</strong>
+        </div>
+
+        <div class="pg-actions">
+          <button id="btn-confirm-paid" class="btn-primary btn-block btn-large">Saya Sudah Membayar (Simulasi Sukses)</button>
+          <button id="btn-cancel-pg" class="btn-ghost btn-block">Ubah Metode Pembayaran</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. E-VOUCHER -->
+  <section id="voucher-screen" class="screen">
+    <div class="container narrow-container">
+      <div class="card voucher-card">
+        <div class="success-header">
+          <div class="check-circle">&#10003;</div>
+          <span class="status-pill">PEMBAYARAN BERHASIL</span>
+          <h2>E-Voucher & Tiket Perjalanan Siap!</h2>
+          <p>Terima kasih, <strong id="v-cust-name">Budi Santoso</strong>. Tiket transportasi, hotel, dan wisata Anda telah diterbitkan.</p>
+        </div>
+
+        <div class="voucher-meta">
+          <div>
+            <span>Kode Booking</span>
+            <strong id="v-booking-code">EPL-2026-991</strong>
+          </div>
+          <div>
+            <span>Tanggal Berangkat</span>
+            <strong id="v-trip-date">25 Nov 2026</strong>
+          </div>
+          <div>
+            <span>Peserta</span>
+            <strong id="v-participants">2 Dewasa, 1 Anak</strong>
+          </div>
+        </div>
+
+        <div class="voucher-section">
+          <h4>Tiket Transportasi & Hotel (Lunas)</h4>
+          <div id="v-transport-hotel-list"></div>
+        </div>
+
+        <div class="voucher-section">
+          <h4>Daftar Tiket Wisata Terpesan</h4>
+          <div id="v-itinerary-list"></div>
+        </div>
+
+        <div class="voucher-section pocket-guide">
+          <h4>Panduan Saku Anggaran Lapangan</h4>
+          <div class="guide-grid">
+            <div class="guide-item">
+              <span>Alokasi Kuliner</span>
+              <strong id="v-pocket-food">Rp 0</strong>
+            </div>
+            <div class="guide-item">
+              <span>Alokasi Oleh-oleh</span>
+              <strong id="v-pocket-souvenir">Rp 0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="voucher-actions">
+          <button onclick="window.print()" class="btn-primary">🖨️ Cetak / Simpan PDF</button>
+          <button id="btn-new-plan" class="btn-outline">Buat Rencana Liburan Baru</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
