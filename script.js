@@ -631,7 +631,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('btn-demo-login').addEventListener('click', () => {
-    completeAuthentication({ name: 'Keluarga Budi Santoso', email: 'budi@eplamo.id', phone: '081234567890' });
+    completeAuthentication({ name: 'Keysha Andini Zahidah', email: 'keysha@eplamo.id', phone: '081234567890' });
   });
 
   document.getElementById('btn-logout').addEventListener('click', () => {
